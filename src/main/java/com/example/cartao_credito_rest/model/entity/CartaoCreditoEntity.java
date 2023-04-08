@@ -2,6 +2,7 @@ package com.example.cartao_credito_rest.model.entity;
 
 import jakarta.persistence.*;
 
+import java.util.Calendar;
 import java.util.Date;
 import java.util.UUID;
 
@@ -20,10 +21,7 @@ public class CartaoCreditoEntity {
     private String numeroCartao;
 
     @Column(name = "cl_limite_cartao", nullable = false)
-    private double Limite;
-
-    @Column(name = "cl_dt_vencimento", nullable = false)
-    private Date validade;
+    private double limite;
 
     @Column(name = "cl_valor_fatura", nullable = false)
     private double valorFatura = 0.00;
@@ -33,6 +31,9 @@ public class CartaoCreditoEntity {
 
     @Column(name = "cl_senha", nullable = false)
     private String senha;
+
+    @Column(name = "cl_validade", nullable = false)
+    private String validade = "10 ANOS";
 
 
     public String getNomeTitular() {
@@ -52,11 +53,11 @@ public class CartaoCreditoEntity {
     }
 
     public double getLimite() {
-        return Limite;
+        return limite;
     }
 
     public void setLimite(double limite) {
-        Limite = limite;
+        this.limite = limite;
     }
 
     public double getValorFatura() {
@@ -82,4 +83,5 @@ public class CartaoCreditoEntity {
     public void setSenha(String senha) {
         this.senha = senha;
     }
+
 }

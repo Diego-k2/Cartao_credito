@@ -17,7 +17,7 @@ public class CartaoCreditoEntity {
     @Column(name = "cl_nome_titular", nullable = false)
     private String nomeTitular;
 
-    @Column(name = "cl_numero_cartao", nullable = false)
+    @Column(name = "cl_numero_cartao", nullable = false, unique = true)
     private String numeroCartao;
 
     @Column(name = "cl_limite_cartao", nullable = false)
